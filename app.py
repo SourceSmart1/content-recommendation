@@ -28,35 +28,87 @@ st.markdown("""
         font-size: 2.5rem;
         color: #1E88E5;
         font-weight: 800;
+        text-align: center;
+        margin-bottom: 10px;
+        background: linear-gradient(90deg, #1E88E5, #5E35B1);
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
     }
     .sub-header {
         font-size: 1.8rem;
         color: #0D47A1;
         font-weight: 600;
+        text-align: center;
+        margin-bottom: 20px;
     }
-    .platform-card {
-        padding: 20px;
-        border-radius: 5px;
-        margin-bottom: 10px;
+    .platform-button {
+        padding: 20px 10px;
+        border-radius: 10px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+        margin: 5px;
+        transition: transform 0.2s;
+        border: none;
     }
-    .linkedin-card {
+    .platform-button:hover {
+        transform: scale(1.05);
+    }
+    .linkedin-button {
         background-color: #0077B5;
-        color: white;
     }
-    .twitter-card {
+    .x-button {
         background-color: #1DA1F2;
-        color: white;
     }
-    .tiktok-card {
+    .tiktok-button {
         background-color: #000000;
+    }
+    .platform-selected {
+        border: 4px solid #FFD700;
+        transform: scale(1.05);
+    }
+    .big-button {
+        padding: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: #4CAF50;
         color: white;
+        text-align: center;
+        margin: 20px 0;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s;
+    }
+    .big-button:hover {
+        background-color: #45a049;
+    }
+    .auto-button {
+        padding: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 15px;
+        background: linear-gradient(45deg, #FF5722, #FF9800);
+        color: white;
+        text-align: center;
+        margin: 20px 0;
+        cursor: pointer;
+        border: none;
+        transition: transform 0.3s;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .auto-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     }
     .content-box {
         background-color: #f9f9f9;
-        padding: 15px;
-        border-radius: 5px;
-        border-left: 5px solid #1E88E5;
-        margin-bottom: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
     }
     .highlight {
         background-color: #FFF176;
@@ -68,16 +120,99 @@ st.markdown("""
     }
     .search-result {
         margin-bottom: 15px;
-        padding: 10px;
-        border-radius: 5px;
+        padding: 15px;
+        border-radius: 10px;
         background-color: #f5f5f5;
-        border-left: 4px solid #4CAF50;
+        border-left: 6px solid #4CAF50;
     }
     .insight-box {
-        padding: 10px;
+        padding: 15px;
         background-color: #E3F2FD;
-        border-radius: 5px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #90CAF9;
+    }
+    .section-title {
+        background-color: #3949AB;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .card {
+        padding: 20px;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+        border-top: 5px solid #3949AB;
+        color: #333;
+    }
+    .step-number {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: #3949AB;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        margin-right: 10px;
+    }
+    .step-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #3949AB;
+    }
+    .hint-text {
+        font-size: 0.9rem;
+        color: #666;
+        font-style: italic;
+        margin-top: 5px;
+    }
+    div[data-testid="stExpander"] {
+        border: 1px solid #ddd;
+        border-radius: 10px;
         margin-bottom: 10px;
+    }
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 1px;
+    }
+    .stTabs [data-baseweb="tab"] {
+        border-radius: 4px 4px 0px 0px;
+        padding: 10px 16px;
+        background-color: #f0f2f6;
+    }
+    .stTabs [aria-selected="true"] {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .card p, .card li, .card h1, .card h2, .card h3, .card h4, .card h5, .card h6 {
+        color: #333 !important;
+    }
+    .stMarkdown p, .stMarkdown li, .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
+        color: #333;
+    }
+    [data-testid="stExpanderContent"] {
+        color: #333 !important;
+    }
+    .stTabs [data-baseweb="tab-panel"] {
+        color: #333 !important;
+        background-color: #ffffff;
+    }
+    .stTabContent {
+        color: #333 !important;
+    }
+    .streamlit-expanderContent {
+        color: #333 !important;
+    }
+    .element-container .stMarkdown {
+        color: #333;
+    }
+    div.stTabs div[data-baseweb="tab-panel"] div.markdown-text-container p {
+        color: #333 !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -373,7 +508,7 @@ Make each post distinct in approach and focus. The content should be authentic t
 def get_download_link(content, filename, link_text):
     """Generate a link to download content as a file"""
     b64 = base64.b64encode(content.encode()).decode()
-    href = f'<a href="data:file/txt;base64,{b64}" download="{filename}">{link_text}</a>'
+    href = f'<a href="data:file/txt;base64,{b64}" download="{filename}" style="display: inline-block; padding: 0.5em 1em; color: white; background-color: #4CAF50; text-decoration: none; border-radius: 5px; text-align: center; cursor: pointer; margin: 10px 0;">{link_text}</a>'
     return href
 
 # Function to format the search results for better display
@@ -383,305 +518,304 @@ def format_search_results(results, platform):
     
     st.success(f"Found {len(results)} relevant topics")
     
+    for i, result in enumerate(results):
+        with st.expander(f"📄 {i+1}. {result.get('title', 'No title')}"):
+            col1, col2 = st.columns([3, 1])
+            with col1:
+                st.markdown(f"**Source:** [{result.get('url', 'No URL')}]({result.get('url', 'No URL')})")
+                st.markdown(f"**Published:** {result.get('published_date', 'Unknown date')}")
+                st.markdown(f"**Reading time:** {result.get('reading_time', '?')} minute(s)")
+            
+            with col2:
+                # Add a button to use this specific result for content generation
+                if st.button(f"Use for content", key=f"focus_{i}"):
+                    st.session_state.focused_result = result
+                    st.session_state.focused_index = i
+                    st.success(f"✅ Topic selected for generation!")
+            
+            # Show highlighted text if available, otherwise regular text
+            text = result.get('highlighted_text', result.get('text', 'No text'))
+            st.markdown(f"**Content:** {text}", unsafe_allow_html=True)
+
+# Auto-Generate All button function - runs the entire process automatically
+def auto_generate_all(industry_terms, platform, num_results, days_back, search_depth, tone, content_type, specific_focus):
+    with st.spinner("🚀 Step 1: Finding relevant topics..."):
+        # Use a platform-specific template for searching
+        search_templates = {
+            "LinkedIn": f"latest business trends in {industry_terms}",
+            "X": f"trending topics in {industry_terms}",
+            "TikTok": f"viral business content {industry_terms}"
+        }
+        search_query = search_templates.get(platform, f"latest news in {industry_terms}")
+        
+        # Perform the search
+        search_results = exa_search(
+            search_query, 
+            num_results=num_results, 
+            days_back=days_back,
+            search_depth=search_depth,
+            highlight_query=industry_terms
+        )
+        
+        if not search_results:
+            st.error("❌ No search results found. The automated process cannot continue.")
+            return
+        
+        st.session_state.search_results = search_results
+        st.session_state.search_query = search_query
+    
+    with st.spinner("🧠 Step 2: Extracting content insights..."):
+        # Generate insights from search results
+        insights = extract_insights(
+            search_results,
+            industry_terms,
+            platform
+        )
+        st.session_state.insights = insights
+    
+    with st.spinner("✍️ Step 3: Creating personalized content..."):
+        # Load profile information
+        profile_info = load_profile()
+        
+        # Get current date
+        current_date = datetime.now().strftime("%A, %B %d, %Y")
+        
+        # Generate content
+        content = generate_content(
+            platform,
+            profile_info,
+            search_results,
+            current_date,
+            tone=tone,
+            content_type=content_type,
+            specific_focus=specific_focus
+        )
+        st.session_state.generated_content = content
+    
+    st.success("✅ All done! Your personalized content has been generated!")
+
+# Main application - only show if password is correct
+if check_password():
+    # App title and description with custom styling
+    st.markdown("<h1 class='main-header'>Social Media Content Generator</h1>", unsafe_allow_html=True)
+    
+    # Date information
+    current_date = datetime.now().strftime("%A, %B %d, %Y")
+    st.markdown(f"<p style='text-align: center; margin-bottom: 30px;'>Today is {current_date}</p>", unsafe_allow_html=True)
+    
+    # Industry terms definition
+    industry_terms = "AI procurement, supply chain technology, B2B SaaS, procurement automation"
+    
+    # Simple platform selection with visual buttons
+    st.markdown("<div class='section-title'>STEP 1: Choose Your Platform</div>", unsafe_allow_html=True)
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        linkedin_class = "platform-button linkedin-button"
+        if st.session_state.get("platform") == "LinkedIn":
+            linkedin_class += " platform-selected"
+        
+        if st.button("LinkedIn", key="linkedin_btn", 
+            help="Professional content for business networking"):
+            st.session_state.platform = "LinkedIn"
+    
+    with col2:
+        x_class = "platform-button x-button"
+        if st.session_state.get("platform") == "X":
+            x_class += " platform-selected"
+            
+        if st.button("X (Twitter)", key="x_btn",
+            help="Short-form content for real-time conversations"):
+            st.session_state.platform = "X"
+    
+    with col3:
+        tiktok_class = "platform-button tiktok-button"
+        if st.session_state.get("platform") == "TikTok":
+            tiktok_class += " platform-selected"
+            
+        if st.button("TikTok", key="tiktok_btn",
+            help="Video scripts for trending content"):
+            st.session_state.platform = "TikTok"
+    
+    # Show current selection
+    if "platform" not in st.session_state:
+        st.session_state.platform = "LinkedIn"  # Default
+    
     platform_colors = {
         "LinkedIn": "#0077B5",
         "X": "#1DA1F2",
         "TikTok": "#000000"
     }
-    color = platform_colors.get(platform, "#4CAF50")
     
-    for i, result in enumerate(results):
-        with st.expander(f"{i+1}. {result.get('title', 'No title')}"):
-            st.markdown(f"**Source:** [{result.get('url', 'No URL')}]({result.get('url', 'No URL')})")
-            st.markdown(f"**Published:** {result.get('published_date', 'Unknown date')}")
-            st.markdown(f"**Reading time:** {result.get('reading_time', '?')} minute(s)")
-            
-            # Show highlighted text if available, otherwise regular text
-            text = result.get('highlighted_text', result.get('text', 'No text'))
-            st.markdown(f"**Content:** {text}", unsafe_allow_html=True)
-            
-            # Add a button to use this specific result for content generation
-            if st.button(f"Focus on this topic for generation", key=f"focus_{i}"):
-                st.session_state.focused_result = result
-                st.session_state.focused_index = i
-                st.info(f"Content generation will focus on topic #{i+1}: {result.get('title', 'No title')}")
-
-# Main application - only show if password is correct
-if check_password():
-    # App title and description with custom styling
-    st.markdown("<h1 class='main-header'>Personalized Content Recommendation Agent</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 class='sub-header'>For Raimond Murakas, CEO of SourceSmart</h2>", unsafe_allow_html=True)
+    platform_color = platform_colors.get(st.session_state.platform, "#4CAF50")
     
-    # Date information
-    current_date = datetime.now().strftime("%A, %B %d, %Y")
-    st.write(f"Today is {current_date}")
+    st.markdown(f"<div style='text-align: center; margin: 20px 0; padding: 10px; background-color: {platform_color}; color: white; border-radius: 10px; font-weight: bold;'>Selected: {st.session_state.platform}</div>", unsafe_allow_html=True)
     
-    # Create columns for better layout
-    col1, col2 = st.columns([1, 3])
+    # SIMPLE CONTENT SETTINGS
+    st.markdown("<div class='section-title'>STEP 2: Quick Settings</div>", unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
     
     with col1:
-        st.subheader("Content Parameters")
-        
-        # Platform selection with visual cards
-        st.write("**Select your social media platform:**")
-        platform_col1, platform_col2, platform_col3 = st.columns(3)
-        
-        with platform_col1:
-            linkedin_selected = st.button("LinkedIn", key="linkedin_btn", 
-                help="Professional content for business networking")
-            if linkedin_selected:
-                st.session_state.platform = "LinkedIn"
-        
-        with platform_col2:
-            x_selected = st.button("X", key="x_btn",
-                help="Short-form content for real-time conversations")
-            if x_selected:
-                st.session_state.platform = "X"
-        
-        with platform_col3:
-            tiktok_selected = st.button("TikTok", key="tiktok_btn",
-                help="Video scripts for trending content")
-            if tiktok_selected:
-                st.session_state.platform = "TikTok"
-        
-        # Show current selection
-        if "platform" not in st.session_state:
-            st.session_state.platform = "LinkedIn"  # Default
-        
-        st.markdown(f"**Currently selected:** {st.session_state.platform}")
-        
-        # Advanced content customization
-        st.subheader("Content Customization")
-        
         tone = st.selectbox(
-            "Content Tone",
+            "Content Tone 🎭",
             options=["professional", "conversational", "thought_leadership", "educational", "storytelling"],
             format_func=lambda x: x.replace("_", " ").title(),
-            help="The tone and voice of the generated content"
-        )
-        
-        content_type = st.selectbox(
-            "Content Type",
-            options=["news_commentary", "how_to", "industry_insight", "success_story", "question_engagement"],
-            format_func=lambda x: x.replace("_", " ").title(),
-            help="The format and purpose of the content"
-        )
-        
-        specific_focus = st.text_input(
-            "Specific Focus (Optional)",
-            placeholder="e.g., AI innovation, supply chain efficiency",
-            help="A specific topic or angle to emphasize"
-        )
-        
-        # Search parameters
-        st.subheader("Search Parameters")
-        
-        num_results = st.slider(
-            "Number of results", 
-            min_value=3, 
-            max_value=15, 
-            value=5,
-            help="How many search results to retrieve"
-        )
-        
-        days_back = st.slider(
-            "Days back", 
-            min_value=1, 
-            max_value=30, 
-            value=7,
-            help="How recent the search results should be"
-        )
-        
-        search_depth = st.select_slider(
-            "Search depth",
-            options=["basic", "advanced"],
-            value="basic",
-            help="Basic is faster, advanced is more thorough"
         )
     
     with col2:
-        # Display platform-specific tips
-        platform_tips = {
-            "LinkedIn": "Best for: Professional insights, industry news, company updates, thought leadership",
-            "X": "Best for: Trending topics, quick updates, news commentary, conversations, polls",
-            "TikTok": "Best for: Educational content, behind-the-scenes, trending challenges, day-in-the-life"
-        }
+        content_type = st.selectbox(
+            "Content Type 📝",
+            options=["news_commentary", "how_to", "industry_insight", "success_story", "question_engagement"],
+            format_func=lambda x: x.replace("_", " ").title(),
+        )
+    
+    specific_focus = st.text_input(
+        "Specific Focus (Optional) 🎯",
+        placeholder="e.g., AI innovation, supply chain efficiency",
+    )
+    
+    with st.expander("Advanced Search Settings ⚙️"):
+        col1, col2 = st.columns(2)
         
-        st.info(platform_tips.get(st.session_state.platform, "Select a platform for specific tips"))
+        with col1:
+            num_results = st.slider(
+                "Number of results", 
+                min_value=3, 
+                max_value=15, 
+                value=5,
+            )
+            
+            days_back = st.slider(
+                "How recent? (days)", 
+                min_value=1, 
+                max_value=30, 
+                value=7,
+            )
         
-        # Create tabs for different sections
-        tab1, tab2, tab3, tab4 = st.tabs(["Profile", "Relevant Topics", "Content Insights", "Recommendations"])
+        with col2:
+            search_depth = st.radio(
+                "Search depth",
+                options=["basic", "advanced"],
+                horizontal=True,
+                help="Basic is faster, advanced is more thorough"
+            )
+    
+    # AUTO-GENERATE BUTTON
+    st.markdown("<div class='section-title'>STEP 3: Generate Content</div>", unsafe_allow_html=True)
+    
+    # Create a big, eye-catching button for one-click automation
+    auto_generate_col1, auto_generate_col2, auto_generate_col3 = st.columns([1,2,1])
+    
+    with auto_generate_col2:
+        auto_button = st.button(
+            "🔮 AUTO-GENERATE EVERYTHING! 🔮",
+            help="Click once to automatically search, analyze, and generate content",
+            key="auto_generate_btn"
+        )
+        st.markdown("<p class='hint-text' style='text-align: center;'>Click once and let the AI do all the work!</p>", unsafe_allow_html=True)
+    
+    if auto_button:
+        auto_generate_all(
+            industry_terms, 
+            st.session_state.platform, 
+            num_results, 
+            days_back, 
+            search_depth,
+            tone,
+            content_type,
+            specific_focus
+        )
+    
+    # Create a tabbed interface for viewing the different components
+    if hasattr(st.session_state, 'search_results') or hasattr(st.session_state, 'insights') or hasattr(st.session_state, 'generated_content'):
+        st.markdown("<div class='section-title'>STEP 4: Review Your Results</div>", unsafe_allow_html=True)
         
-        with tab1:
-            st.subheader("Your Profile Information")
-            # Load profile information
-            profile_info = load_profile()
-            st.markdown(profile_info)
+        tabs = st.tabs(["✨ Final Content", "🔍 Search Results", "💡 Content Insights"])
         
-        with tab2:
-            st.subheader("Finding Relevant Topics")
-            
-            # Different search queries based on the platform and profile
-            industry_terms = "AI procurement, supply chain technology, B2B SaaS, procurement automation"
-            
-            # Create columns for search input
-            search_col1, search_col2 = st.columns([3, 1])
-            
-            with search_col1:
-                # Pre-defined search queries for each platform as templates
-                search_templates = {
-                    "LinkedIn": [
-                        f"latest business trends in {industry_terms}",
-                        f"innovation in {industry_terms}",
-                        f"challenges facing {industry_terms}",
-                        f"future of {industry_terms}",
-                        f"leadership in {industry_terms}"
-                    ],
-                    "X": [
-                        f"trending topics in {industry_terms}",
-                        f"breaking news {industry_terms}",
-                        f"tech innovation {industry_terms}",
-                        f"debate about {industry_terms}",
-                        f"stats and facts {industry_terms}"
-                    ],
-                    "TikTok": [
-                        f"viral business content {industry_terms}",
-                        f"entrepreneur tips {industry_terms}",
-                        f"day in the life {industry_terms}",
-                        f"behind the scenes {industry_terms}",
-                        f"educational content {industry_terms}"
-                    ]
-                }
-                
-                # Get templates for selected platform
-                platform_templates = search_templates.get(st.session_state.platform, search_templates["LinkedIn"])
-                
-                # Allow user to select a template or create custom query
-                search_option = st.radio(
-                    "Choose search method:",
-                    options=["Use template", "Custom query"],
-                    horizontal=True
-                )
-                
-                if search_option == "Use template":
-                    search_query = st.selectbox(
-                        "Select a search template:",
-                        options=platform_templates
-                    )
-                else:
-                    search_query = st.text_input(
-                        "Enter custom search query:",
-                        placeholder=f"e.g., latest news in {industry_terms}",
-                        value=platform_templates[0]
-                    )
-            
-            with search_col2:
-                search_button = st.button("Find Topics", use_container_width=True)
-                if search_button:
-                    search_results = exa_search(
-                        search_query, 
-                        num_results=num_results, 
-                        days_back=days_back,
-                        search_depth=search_depth,
-                        highlight_query=industry_terms
-                    )
-                    st.session_state.search_results = search_results
-                    st.session_state.search_query = search_query
-            
-            # Display search results if available
-            if 'search_results' in st.session_state:
-                format_search_results(st.session_state.search_results, st.session_state.platform)
-        
-        with tab3:
-            st.subheader("Content Insights")
-            
-            if st.button("Generate Content Insights"):
-                if not hasattr(st.session_state, 'search_results') or not st.session_state.search_results:
-                    st.warning("Please find relevant topics first")
-                else:
-                    insights = extract_insights(
-                        st.session_state.search_results,
-                        industry_terms,
-                        st.session_state.platform
-                    )
-                    st.session_state.insights = insights
-            
-            if hasattr(st.session_state, 'insights'):
-                st.markdown(st.session_state.insights)
-        
-        with tab4:
-            st.subheader("Content Recommendations")
-            
-            if st.button("Generate Content"):
-                # Check if search results exist in session state
-                if not hasattr(st.session_state, 'search_results') or not st.session_state.search_results:
-                    st.warning("Please find relevant topics first")
-                else:
-                    with st.spinner(f"Generating personalized {st.session_state.platform} content..."):
-                        # Use focused result if available
-                        search_data = st.session_state.search_results
-                        if hasattr(st.session_state, 'focused_result'):
-                            search_data = [st.session_state.focused_result]
-                            focused_title = st.session_state.focused_result.get('title', 'this topic')
-                            st.info(f"Generating content focused on: {focused_title}")
-                        
-                        content = generate_content(
-                            st.session_state.platform,
-                            profile_info,
-                            search_data,
-                            current_date,
-                            tone=tone,
-                            content_type=content_type,
-                            specific_focus=specific_focus
-                        )
-                        st.session_state.generated_content = content
-            
+        # Tab 1: Final generated content (most important, so it's first)
+        with tabs[0]:
             if hasattr(st.session_state, 'generated_content'):
+                st.markdown("### Your Generated Content")
+                st.markdown("<div class='card'>", unsafe_allow_html=True)
                 st.markdown(st.session_state.generated_content)
+                st.markdown("</div>", unsafe_allow_html=True)
                 
                 # Add download option
                 filename = f"content_{st.session_state.platform}_{datetime.now().strftime('%Y%m%d_%H%M')}.txt"
-                download_link = get_download_link(st.session_state.generated_content, filename, "Download content as text file")
+                download_link = get_download_link(st.session_state.generated_content, filename, "📥 Download content as text file")
                 st.markdown(download_link, unsafe_allow_html=True)
+            else:
+                st.info("Content hasn't been generated yet. Use the AUTO-GENERATE button above to create content.")
+        
+        # Tab 2: Search results
+        with tabs[1]:
+            if hasattr(st.session_state, 'search_results'):
+                st.markdown("### Search Results")
+                format_search_results(st.session_state.search_results, st.session_state.platform)
+            else:
+                st.info("No search results available. Use the AUTO-GENERATE button to perform a search.")
+        
+        # Tab 3: Insights
+        with tabs[2]:
+            if hasattr(st.session_state, 'insights'):
+                st.markdown("### Content Insights")
+                st.markdown("<div class='card'>", unsafe_allow_html=True)
+                st.markdown(st.session_state.insights)
+                st.markdown("</div>", unsafe_allow_html=True)
+            else:
+                st.info("No insights available. Use the AUTO-GENERATE button to extract insights.")
     
     # Add some additional information in the sidebar
     with st.sidebar:
-        st.title("About")
-        st.info(
-            "This content recommendation agent uses Exa AI to find relevant news "
-            "and trending topics, then leverages Claude from Anthropic to generate "
-            "personalized content recommendations specifically tailored for Raimond Murakas "
-            "and his role at SourceSmart."
-        )
-        
-        st.subheader("How it works")
+        st.markdown("<h3 style='text-align: center;'>About This Tool</h3>", unsafe_allow_html=True)
         st.markdown(
             """
-            1. **Select your platform** - Choose between LinkedIn, X, or TikTok
-            2. **Customize content parameters** - Set tone, type, and focus
-            3. **Find relevant topics** - Search the web for current news and trends
-            4. **Generate insights** - Extract key points from search results
-            5. **Create content** - Get personalized content ideas ready to post
-            """
+            <div style='background-color: #f0f2f6; padding: 15px; border-radius: 10px; margin-bottom: 20px;'>
+            This content generator creates personalized social media posts for Raimond Murakas based on:
+            <ul>
+            <li>✅ Current trending topics</li>
+            <li>✅ Industry-specific news</li>
+            <li>✅ Professional profile</li>
+            </ul>
+            </div>
+            """, 
+            unsafe_allow_html=True
         )
         
-        # Add quick tips section
-        st.subheader("Quick Tips")
-        tips = [
-            "Focus on one specific search result for more targeted content",
-            "Try different tones to find what resonates with your audience",
-            "Educational content performs well across all platforms",
-            "Always customize hashtags based on current trending topics",
-            "The best posting times vary by day of week and audience location"
-        ]
+        st.markdown("<h3 style='text-align: center;'>Simple Instructions</h3>", unsafe_allow_html=True)
+        st.markdown(
+            """
+            <ol>
+            <li><strong>Choose platform</strong> - LinkedIn, X, or TikTok</li>
+            <li><strong>Select settings</strong> - Tone and content type</li>
+            <li><strong>Click AUTO-GENERATE</strong> - One button does it all!</li>
+            <li><strong>Review & download</strong> - Your content is ready!</li>
+            </ol>
+            """, 
+            unsafe_allow_html=True
+        )
         
-        # Display a random tip
+        # Add a tip
+        st.markdown("<h3 style='text-align: center;'>Tip of the Day</h3>", unsafe_allow_html=True)
+        tips = [
+            "The best time to post on LinkedIn is Tuesday through Thursday between 8-10am",
+            "Use hashtags strategically - 2-3 for X, 3-5 for LinkedIn",
+            "Educational content performs well across all platforms",
+            "Always include a call-to-action in your posts",
+            "Consistency is key - regular posting builds audience engagement"
+        ]
         random_tip = random.choice(tips)
-        st.markdown(f"💡 **Tip:** {random_tip}")
+        st.markdown(f"""
+        <div style='background-color: #fffde7; padding: 15px; border-radius: 10px; border-left: 5px solid #ffd54f;'>
+        💡 <strong>Tip:</strong> {random_tip}
+        </div>
+        """, unsafe_allow_html=True)
         
         # Add a reset button
-        if st.button("Reset Session"):
+        if st.button("🔄 Reset Everything", help="Clear all generated content and start fresh"):
             for key in list(st.session_state.keys()):
                 if key not in ['password_correct', 'platform']:
                     del st.session_state[key]
-            st.success("Session data has been reset") 
+            st.success("✅ All content has been reset!") 
