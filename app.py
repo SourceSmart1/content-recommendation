@@ -50,8 +50,34 @@ def check_password():
     
     return False
 
-# Initialize Anthropic client
-claude = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+# Initialize Anthropic client more safely
+try:
+    # First try with the standard initialization
+    claude = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+except TypeError as e:
+    if "unexpected keyword argument 'proxies'" in str(e):
+        # If the error is about proxies, try an alternative initialization
+        # The error suggests the client is being initialized with proxies when it shouldn't
+        import httpx
+        from anthropic import Anthropic
+        
+        # Create a client without proxy configuration
+        http_client = httpx.Client(
+            base_url="https://api.anthropic.com",
+            timeout=60.0,
+            follow_redirects=True
+        )
+        
+        try:
+            # Try initializing with just the API key and http_client
+            claude = Anthropic(api_key=ANTHROPIC_API_KEY, http_client=http_client)
+        except Exception as inner_e:
+            # If that still fails, try the most basic initialization
+            claude = Anthropic(api_key=ANTHROPIC_API_KEY)
+            st.warning(f"Using fallback Anthropic client initialization: {str(inner_e)}")
+    else:
+        # If it's some other error, re-raise it
+        raise
 
 # Load Raimond's profile from environment variables
 def load_profile():
