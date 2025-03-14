@@ -1,6 +1,6 @@
 ﻿# Content Recommendation Agent
 
-A personalized content recommendation system for Raimond Murakas, CEO of SourceSmart, that suggests social media posts based on his profile and current trending topics.
+A personalized content recommendation system that suggests social media posts based on his profile and current trending topics.
 
 ## Features
 
